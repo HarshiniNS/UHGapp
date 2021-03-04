@@ -1,0 +1,53 @@
+<div class="jumbotron text-center">
+    <h1>
+      NPI Registry
+    </h1>
+  </div>
+  
+<div class="container">
+<div class="row custom-wrapper">
+<div class="col-md-12">
+<div *ngIf="getErrors().length>0" class="error">ERROR: A search for all individuals or organizations will be very large. Narrow your search further.</div><br>
+<form [formGroup]="npiForm" (ngSubmit)="onSubmit()" >
+
+    <div class="group-gap">
+
+    <div class="mb-3">
+        <h3 class="mb-3">Provider Type</h3>
+            <select id="enumeration_type" formControlName = "enumeration_type" class="form-control">
+                <option value="NPI-1">Individual Providers</option>
+                <option value="NPI-2">Orgnizational Providers</option>
+            </select>
+    </div>
+
+   
+
+
+    <div class="group-gap">
+        <h3 class="mb-3">NPI or TIN</h3>
+                    <input id="option" name="option" type="radio" formControlName = "option" value="tin"  style="margin-right: 5px">
+                    <label>TIN</label><br>
+               
+                    <input id="option" name="option" type="radio" formControlName = "option"  value="npi" style="margin-right: 6px">
+                    <label>NPI</label>      
+    </div>
+
+    <div class="mb-3">
+        <h3 class="mb-3">NPI Number</h3>
+            <input type="number" formControlName="number" name="number" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <h3 class="mb-3">City</h3>
+            <input type="text" formControlName="city" name="city" class="form-control">
+    </div>
+
+    <button type="submit" [disabled]="npiForm.invalid" class="btn btn-block btn-danger btn-lg">Search</button>
+
+</div>
+
+</form>
+
+</div>
+</div>
+</div>

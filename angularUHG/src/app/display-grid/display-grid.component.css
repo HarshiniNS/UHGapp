@@ -1,0 +1,18 @@
+
+  .jumbotron {
+    padding: 30px 2rem 13px;
+    background: #312bc6;
+    color: white;
+    margin: 0 auto 25px;
+    border-radius: 0;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  .error{
+    font-size: 20px;
+    font-weight: 700;
+    color: red;
+  }
